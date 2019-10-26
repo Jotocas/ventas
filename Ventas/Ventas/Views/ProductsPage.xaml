@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Ventas.Views.ProductsPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             Title="Products">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="ic_action_add_circle.png" Command="{Binding AddProductCommand}"/>
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <ffimageloadingsvg:SvgImageSourceConverter 
+                x:Key="SvgImageSourceConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout
+            BindingContext="{Binding Products}"
+            Padding="5">
+            <ListView
+                HasUnevenRows="True"
+                IsRefreshing="{Binding IsRefreshing}"
+                IsPullToRefreshEnabled="True"
+                ItemsSource="{Binding Products}"
+                RefreshCommand="{Binding RefreshCommand}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <!--<MenuItem Text="Editar" Command="{Binding EditProductCommand}"/>-->
+                                <MenuItem Text="Eliminar" Command="{Binding DeleteProductCommand}" IsDestructive="true"/>
+                            </ViewCell.ContextActions>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <ffimageloading:CachedImage HorizontalOptions="Center" VerticalOptions="Center"
+                                    WidthRequest="100" HeightRequest="100"
+                                    DownsampleToViewSize="true"
+                                    Source = "{Binding ImageFullPath}"
+                                    Grid.Column="0">
+                                </ffimageloading:CachedImage>
+
+
+                                <StackLayout
+                                     VerticalOptions="Center"
+                                     Grid.Column="1">
+
+                                    <Label
+                                    FontAttributes="Bold"
+                                    Text="{Binding Description}">
+                                    </Label>
+
+                                    <Label
+                                    Text="{Binding Remarks}">
+                                    </Label>
+
+                                </StackLayout>
+                                <Label
+                                    Grid.Column="2"
+                                    HorizontalOptions="End"
+                                    Text="{Binding Price, StringFormat='{0:C2}'}"
+                                    VerticalOptions="Center">
+                                </Label>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

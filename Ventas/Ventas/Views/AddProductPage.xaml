@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             x:Class="Ventas.Views.AddProductPage"
+             Title="Nuevo Producto">
+    <ContentPage.Content>
+        <ScrollView
+             BindingContext="{Binding AddProducts}">
+            <StackLayout
+            Padding="5">
+                <Image
+                    Source="{Binding ImageSource}">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding ChangeImageCommand}">
+                            
+                        </TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Label
+                    FontSize="Small"
+                    HorizontalOptions="Center"
+                Text="Cambiar Imagen">
+                </Label>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Label
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        VerticalOptions="Center"
+                       Text="Descripción">
+                    </Label>
+
+                    <Entry
+                         Grid.Column="1"
+                        Grid.Row="0"
+                        Text="{Binding Descripcion}"
+                Placeholder="Ingrese la Descripción">
+                    </Entry>
+
+                    <Label
+                         Grid.Column="0"
+                        Grid.Row="1"
+                         VerticalOptions="Center"
+                Text="Precio">
+                    </Label>
+                    <Entry
+                         Grid.Column="1"
+                        Grid.Row="1"
+                Keyboard="Numeric"
+                        Text="{Binding Price}"
+                Placeholder="Ingrese el Precio">
+                    </Entry>
+
+                    <Label
+                         Grid.Column="0"
+                        Grid.Row="2"
+                         VerticalOptions="Center"
+                Text="Observaciones">
+                    </Label>
+                    <Editor
+                          Grid.Column="1"
+                        Grid.Row="2"
+                VerticalOptions="FillAndExpand"
+                        Text="{Binding Remarks}"
+                Placeholder="Ingrese las Observaciones">
+                    </Editor>
+
+                </Grid>
+
+                <ActivityIndicator
+                    IsRunning="{Binding IsRunning}"
+                   VerticalOptions="CenterAndExpand" >
+                </ActivityIndicator>
+
+
+                <Button 
+                    BorderRadius="23"
+                    HeightRequest="46"
+                    TextColor="White"
+                    Command="{Binding SaveCommand}"
+                    BackgroundColor="Navy"
+                    IsEnabled="{Binding IsEnabled}"
+                    Text="Guardar">
+                </Button>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
