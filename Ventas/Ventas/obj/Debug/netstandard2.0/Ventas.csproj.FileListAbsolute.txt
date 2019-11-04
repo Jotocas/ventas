@@ -16,3 +16,4 @@ D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas\obj\Debug
 D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas\obj\Debug\netstandard2.0\Ventas.dll
 D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas\obj\Debug\netstandard2.0\ref\Ventas.dll
 D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas\obj\Debug\netstandard2.0\Ventas.pdb
+D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas\obj\Debug\netstandard2.0\Views\EditProductPage.xaml.g.cs

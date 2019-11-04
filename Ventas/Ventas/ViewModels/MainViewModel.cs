@@ -9,7 +9,7 @@
         #region Propiedades
         public ProductsViewModel Products { get; set; }
         public AddProductViewModel AddProducts { get; set; }
-       // public EditProductViewModel EditProduct { get; set; }
+        public EditProductViewModel EditProduct { get; set; }
 
         #endregion
 

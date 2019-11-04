@@ -325,28 +325,28 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>11/28/2018 13:04:24</publishTime>
     </File>
     <File Include="bin/Ventas.API.dll">
-      <publishTime>10/25/2019 22:49:17</publishTime>
+      <publishTime>11/01/2019 14:14:44</publishTime>
     </File>
     <File Include="bin/Ventas.API.pdb">
-      <publishTime>10/25/2019 22:49:17</publishTime>
+      <publishTime>11/01/2019 14:14:44</publishTime>
     </File>
     <File Include="bin/Ventas.Common.dll">
-      <publishTime>10/25/2019 22:49:12</publishTime>
+      <publishTime>10/26/2019 20:25:29</publishTime>
     </File>
     <File Include="bin/Ventas.Common.dll.config">
       <publishTime>09/29/2019 22:29:20</publishTime>
     </File>
     <File Include="bin/Ventas.Common.pdb">
-      <publishTime>10/25/2019 22:49:12</publishTime>
+      <publishTime>10/26/2019 20:25:29</publishTime>
     </File>
     <File Include="bin/Ventas.Domain.dll">
-      <publishTime>10/25/2019 22:49:13</publishTime>
+      <publishTime>10/26/2019 20:25:29</publishTime>
     </File>
     <File Include="bin/Ventas.Domain.dll.config">
       <publishTime>09/29/2019 22:29:22</publishTime>
     </File>
     <File Include="bin/Ventas.Domain.pdb">
-      <publishTime>10/25/2019 22:49:13</publishTime>
+      <publishTime>10/26/2019 20:25:29</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>01/23/2014 13:57:34</publishTime>

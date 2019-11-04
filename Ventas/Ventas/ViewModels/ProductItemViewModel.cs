@@ -9,7 +9,7 @@ namespace Ventas.ViewModels
     using Services;
     using Xamarin.Forms;
     using System.Linq;
-    using Ventas.Views;
+    using Views;
 
     public class ProductItemViewModel:Product
     {
@@ -26,19 +26,19 @@ namespace Ventas.ViewModels
         #endregion
 
         #region Comandos
-        //public ICommand EditProductCommand
-        //{
-        //    get
-        //    {
-        //        return new RelayCommand(EditProduct);
-        //    }
-        //}
+        public ICommand EditProductCommand
+        {
+            get
+            {
+                return new RelayCommand(EditProduct);
+            }
+        }
 
-        //private async void EditProduct()
-        //{
-        //    // MainViewModel.GetInstance().EditProduct = new EditProductViewModel(this);
-        //    // await Application.Current.MainPage.Navigation.PushAsync(new EditProductPage());
-        //}
+        private async void EditProduct()
+        {
+            MainViewModel.GetInstance().EditProduct = new EditProductViewModel(this);
+           await Application.Current.MainPage.Navigation.PushAsync(new EditProductPage());
+        }
 
         public ICommand DeleteProductCommand
         {

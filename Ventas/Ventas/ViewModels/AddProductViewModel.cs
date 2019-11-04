@@ -5,7 +5,6 @@ namespace Ventas.ViewModels
     using System.Windows.Input;
     using Xamarin.Forms;
     using Services;
-    using System;
     using Ventas.Common.Models;
     using Plugin.Media;
     using Plugin.Media.Abstractions;
@@ -18,17 +17,17 @@ namespace Ventas.ViewModels
         private bool isEnabled;
         private ApiService apiService;
         private ImageSource imageSource;
-        private Plugin.Media.Abstractions.MediaFile file;
+        private MediaFile file;
         #endregion
 
         #region Propiedades
 
-        public ImageSource ImageSource { get => imageSource; set => this.SetValue(ref imageSource, value); }
         public string Descripcion { get; set; }
         public string Price { get; set; }
         public string Remarks { get; set; }
         public bool IsRunning { get => isRunning; set => this.SetValue(ref isRunning, value); }
         public bool IsEnabled { get => isEnabled; set => this.SetValue(ref isEnabled, value); }
+        public ImageSource ImageSource { get => imageSource; set => this.SetValue(ref imageSource, value); }
         #endregion
 
         #region Constructores

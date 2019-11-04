@@ -18,7 +18,7 @@
                 return new Response
                 {
                     IsSuccess = false,
-                    Message ="No tienes Internet"//Languages.TurnOnInternet,
+                    Message = "No tienes Internet"//Languages.TurnOnInternet,
                 };
             }
 
@@ -28,7 +28,7 @@
                 return new Response
                 {
                     IsSuccess = false,
-                    Message ="No hay Conexion con google.com" //Languages.NoInternet,
+                    Message = "No hay Conexion con google.com" //Languages.NoInternet,
                 };
             }
 
@@ -53,7 +53,7 @@
                 var client = new HttpClient();
                 client.BaseAddress = new Uri(urlBase);
                 var url = string.Format("{0}{1}", servicePrefix, controller);
-                var response = await client.PostAsync(url,content);
+                var response = await client.PostAsync(url, content);
                 var result = await response.Content.ReadAsStringAsync();
                 if (!response.IsSuccessStatusCode)
                 {
@@ -82,18 +82,56 @@
             }
         }
 
-        public async Task<Response> GetList<T>(
-      string urlBase,
-      string servicePrefix,
-      string controller)
+
+        public async Task<Response> Put<T>(string urlBase, string servicePrefix, string controller, T model, int id)
+        {
+            try
+            {
+                var request = JsonConvert.SerializeObject(model);
+                var content = new StringContent(
+                    request, Encoding.UTF8,
+                    "application/json");
+                var client = new HttpClient();
+                client.BaseAddress = new Uri(urlBase);
+                var url = $"{servicePrefix}{controller}/{id}";
+                var response = await client.PutAsync(url, content);
+                var result = await response.Content.ReadAsStringAsync();
+                if (!response.IsSuccessStatusCode)
+                {
+                    return new Response
+                    {
+                        IsSuccess = false,
+                        Message = result,
+                    };
+                }
+
+                var obj = JsonConvert.DeserializeObject<T>(result);
+                return new Response
+                {
+                    IsSuccess = true,
+                    Message = "Ok",
+                    Result = obj,
+                };
+            }
+            catch (Exception ex)
+            {
+                return new Response
+                {
+                    IsSuccess = false,
+                    Message = ex.Message,
+                };
+            }
+        }
+
+        public async Task<Response> GetList<T>(string urlBase, string servicePrefix, string controller)
         {
             try
             {
                 var client = new HttpClient();
                 client.BaseAddress = new Uri(urlBase);
-                 var url = string.Format("{0}{1}", servicePrefix, controller);
-                var response = await client.GetAsync("http://192.168.43.119:70/api/products");
-               // var response = await client.GetAsync(url);
+                var url = string.Format("{0}{1}", servicePrefix, controller);
+                //var response = await client.GetAsync("http://192.168.43.119:70/api/products");
+                var response = await client.GetAsync(url);
                 var result = await response.Content.ReadAsStringAsync();
                 if (!response.IsSuccessStatusCode)
                 {
@@ -123,11 +161,7 @@
         }
 
 
-        public async Task<Response> Delete(
-            string urlBase,
-            string servicePrefix,
-            string controller,
-            int id)
+        public async Task<Response> Delete(string urlBase, string servicePrefix, string controller, int id)
         {
             try
             {

@@ -52,7 +52,7 @@
             if (!connection.IsSuccess)
             {
                 this.IsRefreshing = false;
-                //await Application.Current.MainPage.DisplayAlert("Error", connection.Message, "Aceptar");
+                await Application.Current.MainPage.DisplayAlert("Error", connection.Message, "Aceptar");
                 // await Application.Current.MainPage.DisplayAlert(Languages.Error, connection.Message, Languages.Accept);
                 return;
             }
@@ -72,10 +72,10 @@
             }
 
             this.IsRefreshing = false;
-           this.MyProducts = (List<Product>)response.Result;
+            this.MyProducts = (List<Product>)response.Result;
 
             this.RefreshList();
-            }
+        }
 
         public void RefreshList()
         {
@@ -112,7 +112,7 @@
         private static ProductsViewModel instance;
         public static ProductsViewModel GetInstance()
         {
-            if (instance==null)
+            if (instance == null)
             {
                 return new ProductsViewModel();
             }

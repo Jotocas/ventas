@@ -33,7 +33,7 @@
                     <DataTemplate>
                         <ViewCell>
                             <ViewCell.ContextActions>
-                                <!--<MenuItem Text="Editar" Command="{Binding EditProductCommand}"/>-->
+                                <MenuItem Text="Editar" Command="{Binding EditProductCommand}"/>
                                 <MenuItem Text="Eliminar" Command="{Binding DeleteProductCommand}" IsDestructive="true"/>
                             </ViewCell.ContextActions>
                             <Grid>
