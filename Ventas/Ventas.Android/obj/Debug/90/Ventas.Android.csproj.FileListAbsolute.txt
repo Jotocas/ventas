@@ -626,3 +626,4 @@ D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas.Android\o
 D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas.Android\obj\Debug\90\stamp\_GenerateJavaStubs.stamp
 D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas.Android\obj\Debug\90\stamp\_GeneratePackageManagerJava.stamp
 D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas.Android\obj\Debug\90\stamp\_ResolveLibraryProjectImports.stamp
+D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas.Android\obj\Debug\90\res\drawable-hdpi\ic_arrow_forward_ios.png

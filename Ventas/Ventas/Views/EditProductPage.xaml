@@ -17,7 +17,7 @@
                 x:Key="SvgImageSourceConverter"/>
         </ResourceDictionary>
     </ContentPage.Resources>
-    
+
     <ContentPage.Content>
         <ScrollView
              BindingContext="{Binding EditProduct}">
@@ -33,7 +33,7 @@
 
 
                 <ffimageloading:CachedImage HorizontalOptions="Center" VerticalOptions="Center"
-                                    WidthRequest="100" HeightRequest="100"
+                                    WidthRequest="200" HeightRequest="200"
                                     DownsampleToViewSize="true"
                                     Source = "{Binding ImageSource}"
                                     Grid.Column="0">
@@ -119,17 +119,32 @@
                     IsRunning="{Binding IsRunning}"
                    VerticalOptions="CenterAndExpand" >
                 </ActivityIndicator>
-
-
-                <Button 
+                <StackLayout
+                    Orientation="Horizontal">
+                    <Button 
                     BorderRadius="23"
                     HeightRequest="46"
+                        HorizontalOptions="FillAndExpand"
                     TextColor="White"
                     Command="{Binding SaveCommand}"
                     BackgroundColor="Navy"
                     IsEnabled="{Binding IsEnabled}"
                     Text="Guardar">
-                </Button>
+                    </Button>
+
+                    <Button 
+                    BorderRadius="23"
+                    HeightRequest="46"
+                    TextColor="White"
+                          HorizontalOptions="FillAndExpand"
+                    Command="{Binding DeleteCommand}"
+                    BackgroundColor="Red"
+                    IsEnabled="{Binding IsEnabled}"
+                    Text="Borrar">
+                    </Button>
+                </StackLayout>
+
+
 
             </StackLayout>
         </ScrollView>

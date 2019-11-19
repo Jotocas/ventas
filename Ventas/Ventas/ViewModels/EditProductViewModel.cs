@@ -7,6 +7,9 @@
     using Common.Models;
     using Plugin.Media;
     using Plugin.Media.Abstractions;
+    using System.Linq;
+    using System;
+
     public class EditProductViewModel : BaseViewModel
     {
         #region Atributos
@@ -50,6 +53,71 @@
             {
                 return new RelayCommand(Save);
             }
+        }
+
+        public ICommand DeleteCommand
+        {
+            get
+            {
+                return new RelayCommand(Delete);
+            }
+        }
+
+        private async void Delete()
+        {
+            var answer = await Application.Current.MainPage.DisplayAlert(
+                "Confirmar",
+                "¿Desea Eliminar este Registro",
+                "Si",
+                "No"
+                );
+
+            if (!answer)
+            {
+                return;
+            }
+
+            this.IsRunning = true;
+            this.IsEnabled = false;
+
+            var connection = await this.apiService.CheckConnection();
+            if (!connection.IsSuccess)
+            {
+                this.IsRunning = false;
+                this.IsEnabled = true;
+                await Application.Current.MainPage.DisplayAlert("Error", connection.Message, "Aceptar");
+                return;
+            }
+
+            var url = Application.Current.Resources["UrlAPI"].ToString();
+            var prefix = Application.Current.Resources["UrlPrefix"].ToString();
+            var controller = Application.Current.Resources["UrlProductsController"].ToString();
+
+            var response = await this.apiService.Delete(url, prefix, controller, this.Product.ProductId);
+            if (!response.IsSuccess)
+            {
+                this.IsRunning = false;
+                this.IsEnabled = true;
+                await Application.Current.MainPage.DisplayAlert("Error", response.Message, "Aceptar");
+                return;
+            }
+
+            var productViewModel = ProductsViewModel.GetInstance();
+
+            var deleteProduct = productViewModel.MyProducts.Where(
+               p => p.ProductId == this.Product.ProductId
+                ).FirstOrDefault();
+
+            if (deleteProduct != null)
+            {
+                productViewModel.MyProducts.Remove(deleteProduct);
+            }
+            productViewModel.RefreshList();
+
+            this.IsRunning = false;
+            this.IsEnabled = true;
+
+            await Application.Current.MainPage.Navigation.PopAsync();
         }
 
         private async void ChangeImage()
@@ -134,13 +202,14 @@
             if (this.file != null)
             {
                 imageArray = FilesHelper.ReadFully(this.file.GetStream());
+                this.Product.ImageArray = imageArray;
             }
 
             var url = Application.Current.Resources["UrlAPI"].ToString();
             var prefix = Application.Current.Resources["UrlPrefix"].ToString();
             var controller = Application.Current.Resources["UrlProductsController"].ToString();
 
-            var response = await this.apiService.Post(url, prefix, controller, product);
+            var response = await this.apiService.Put(url, prefix, controller, this.Product, this.Product.ProductId);
 
             if (!response.IsSuccess)
             {
@@ -150,6 +219,14 @@
 
             var newProduct = (Product)response.Result;
             var productsViewModel = ProductsViewModel.GetInstance();
+
+            var oldProduct = productsViewModel.MyProducts.Where(p => p.ProductId == this.Product.ProductId).FirstOrDefault();
+            if (oldProduct != null)
+            {
+                productsViewModel.MyProducts.Remove(oldProduct);
+            }
+
+
             productsViewModel.MyProducts.Add(newProduct);
             productsViewModel.RefreshList();
 

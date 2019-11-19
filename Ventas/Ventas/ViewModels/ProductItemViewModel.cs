@@ -83,15 +83,15 @@ namespace Ventas.ViewModels
 
             var productViewModel = ProductsViewModel.GetInstance();
 
-            var deleteProduct = productViewModel.Products.Where(
+            var deleteProduct = productViewModel.MyProducts.Where(
                p => p.ProductId == this.ProductId
                 ).FirstOrDefault();
 
             if (deleteProduct!=null)
             {
-                productViewModel.Products.Remove(deleteProduct);
+                productViewModel.MyProducts.Remove(deleteProduct);
             }
-
+            productViewModel.RefreshList();
         }
 
         #endregion
