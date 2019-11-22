@@ -23,6 +23,12 @@
         <StackLayout
             BindingContext="{Binding Products}"
             Padding="5">
+            <SearchBar
+                HeightRequest="30"
+                Placeholder="Busqueda de Productos"
+                SearchCommand="{Binding SearchCommand}"
+                Text="{Binding Filter}">
+            </SearchBar>
             <ListView
                 HasUnevenRows="True"
                 IsRefreshing="{Binding IsRefreshing}"

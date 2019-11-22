@@ -10,13 +10,13 @@ namespace Ventas.ViewModels
     using Xamarin.Forms;
     using System.Linq;
     using Views;
+    using Ventas.Helpers;
 
     public class ProductItemViewModel:Product
     {
         #region Atributos
         private ApiService apiService;
         #endregion
-
 
         #region Constructores
         public ProductItemViewModel()
@@ -74,7 +74,7 @@ namespace Ventas.ViewModels
             var prefix = Application.Current.Resources["UrlPrefix"].ToString();
             var controller = Application.Current.Resources["UrlProductsController"].ToString();
 
-            var response = await this.apiService.Delete(url, prefix, controller, this.ProductId);
+            var response = await this.apiService.Delete(url, prefix, controller, this.ProductId, Settings.TokenType, Settings.AccessToken);
             if (!response.IsSuccess)
             {
                 await Application.Current.MainPage.DisplayAlert("Error", response.Message, "Aceptar");

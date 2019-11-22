@@ -8,17 +8,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Ventas.Views.EditProductPage.xaml", "Views/EditProductPage.xaml", typeof(global::Ventas.Views.AddProductPage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("Ventas.Views.EditProductPage.xaml", "Views/EditProductPage.xaml", typeof(global::Ventas.Views.EditProductPage))]
 
 namespace Ventas.Views {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\EditProductPage.xaml")]
-    public partial class AddProductPage : global::Xamarin.Forms.ContentPage {
+    public partial class EditProductPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "2.0.0.0")]
         private void InitializeComponent() {
-            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(AddProductPage));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(EditProductPage));
         }
     }
 }

@@ -9,6 +9,7 @@
     using Plugin.Media.Abstractions;
     using System.Linq;
     using System;
+    using Ventas.Helpers;
 
     public class EditProductViewModel : BaseViewModel
     {
@@ -93,7 +94,7 @@
             var prefix = Application.Current.Resources["UrlPrefix"].ToString();
             var controller = Application.Current.Resources["UrlProductsController"].ToString();
 
-            var response = await this.apiService.Delete(url, prefix, controller, this.Product.ProductId);
+            var response = await this.apiService.Delete(url, prefix, controller, this.Product.ProductId, Settings.TokenType, Settings.AccessToken);
             if (!response.IsSuccess)
             {
                 this.IsRunning = false;
@@ -209,7 +210,7 @@
             var prefix = Application.Current.Resources["UrlPrefix"].ToString();
             var controller = Application.Current.Resources["UrlProductsController"].ToString();
 
-            var response = await this.apiService.Put(url, prefix, controller, this.Product, this.Product.ProductId);
+            var response = await this.apiService.Put(url, prefix, controller, this.Product, this.Product.ProductId, Settings.TokenType, Settings.AccessToken);
 
             if (!response.IsSuccess)
             {

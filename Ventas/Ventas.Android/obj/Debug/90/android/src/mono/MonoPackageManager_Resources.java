@@ -21,6 +21,8 @@ public class MonoPackageManager_Resources {
 		"Plugin.CurrentActivity.dll",
 		"Plugin.Media.dll",
 		"Plugin.Permissions.dll",
+		"Plugin.Settings.Abstractions.dll",
+		"Plugin.Settings.dll",
 		"SkiaSharp.dll",
 		"Ventas.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",

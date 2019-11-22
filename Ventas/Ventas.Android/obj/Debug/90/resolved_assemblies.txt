@@ -20,6 +20,8 @@ D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas.Android\o
 D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas.Android\obj\Debug\90\android\assets\Plugin.CurrentActivity.dll
 D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas.Android\obj\Debug\90\android\assets\Plugin.Media.dll
 D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas.Android\obj\Debug\90\android\assets\Plugin.Permissions.dll
+D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas.Android\obj\Debug\90\android\assets\Plugin.Settings.Abstractions.dll
+D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas.Android\obj\Debug\90\android\assets\Plugin.Settings.dll
 D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas.Android\obj\Debug\90\android\assets\SkiaSharp.dll
 D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas.Android\obj\Debug\90\android\assets\System.Core.dll
 D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas.Android\obj\Debug\90\android\assets\System.dll

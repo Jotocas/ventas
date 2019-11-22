@@ -14,7 +14,7 @@ namespace Sales.API.Controllers
     using Ventas.API.Helpers;
     using Ventas.Common.Models;
     using Ventas.Domain.Models;
-
+    [Authorize]
     public class ProductsController : ApiController
     {
         private DataContext db = new DataContext();

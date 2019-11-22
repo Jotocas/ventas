@@ -11,9 +11,12 @@ D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas\obj\Debug
 D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas\obj\Debug\netstandard2.0\Views\ProductsPage.xaml.g.cs
 D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas\obj\Debug\netstandard2.0\Ventas.AssemblyInfoInputs.cache
 D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas\obj\Debug\netstandard2.0\Ventas.AssemblyInfo.cs
-D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas\obj\Debug\netstandard2.0\XamlC.stamp
 D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas\obj\Debug\netstandard2.0\Ventas.csproj.CopyComplete
 D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas\obj\Debug\netstandard2.0\Ventas.dll
 D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas\obj\Debug\netstandard2.0\ref\Ventas.dll
 D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas\obj\Debug\netstandard2.0\Ventas.pdb
 D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas\obj\Debug\netstandard2.0\Views\EditProductPage.xaml.g.cs
+D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas\obj\Debug\netstandard2.0\Views\LoginPage.xaml.g.cs
+D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas\obj\Debug\netstandard2.0\XamlC.stamp
+D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas\obj\Debug\netstandard2.0\Views\MasterPage.xaml.g.cs
+D:\ArchivosJose\PracticasXamarin\PracticasFinales\Ventas\Ventas\Ventas\obj\Debug\netstandard2.0\Views\MenuPage.xaml.g.cs
